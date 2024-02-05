@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "06e19bfa-be0a-4f6f-b59a-19ecd50201ae",
+		"name": "Eat@Warteg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13581754"
+	},
+	"item": [
+		{
+			"name": "Auth-User",
+			"item": [
+				{
+					"name": "[POST] Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Pelanggan 1\",\r\n    \"phoneNumber\": \"082325152039\",\r\n    \"email\": \"pelanggan1@gmail.com\",\r\n    \"password\": \"cobaaja123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url3000}}/api/user/register",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[POST] Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khafidulmualif@gmail.com\",\r\n    \"password\": \"cobaaja123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url3000}}/api/user/login",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[POST] Forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khafidulmualif@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url3000}}/api/user/forgot-password",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menus",
+			"item": [
+				{
+					"name": "[POST] Add-Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDcxMjY2MTUsImRhdGEiOnsiaWQiOjEsImZ1bGxOYW1lIjoiS2hhZmlkdWwgTXVhbGlmIiwicm9sZSI6MSwicGhvbmVOdW1iZXIiOiIwODUyMjg5MDQyMDgiLCJlbWFpbCI6ImtoYWZpZHVsbXVhbGlmQGdtYWlsLmNvbSIsImltYWdlVXJsIjpudWxsLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTA1VDA0OjA0OjE4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTA1VDA0OjA0OjE4LjAwMFoifSwiaWF0IjoxNzA3MTIzMDE1fQ.IeuQnSSbtzfiNGI8TEJyssxAMzLcPNg7YrnKEuUZlpc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Double patty burger",
+									"type": "text"
+								},
+								{
+									"key": "categoryID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Double patty cheese burger",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Western",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Phincon/Downloads/images/burger.jpg"
+								},
+								{
+									"key": "price",
+									"value": "50000",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "50",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url3000}}/api/menu/",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] All-Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/menu/",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[DELETE] Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDcxMTk0MzMsImRhdGEiOnsiaWQiOjEsImZ1bGxOYW1lIjoiS2hhZmlkdWwgTXVhbGlmIiwicm9sZSI6MSwicGhvbmVOdW1iZXIiOiIwODUyMjg5MDQyMDgiLCJlbWFpbCI6ImtoYWZpZHVsbXVhbGlmQGdtYWlsLmNvbSIsImltYWdlVXJsIjpudWxsLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTA1VDA0OjA0OjE4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTA1VDA0OjA0OjE4LjAwMFoifSwiaWF0IjoxNzA3MTE1ODMzfQ.1GxqjyvmQNGeVuzWydH2PWB46wm7jVS53re6KOv3T8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/menu/3",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[UPDATE] Update menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDcxMTk0MzMsImRhdGEiOnsiaWQiOjEsImZ1bGxOYW1lIjoiS2hhZmlkdWwgTXVhbGlmIiwicm9sZSI6MSwicGhvbmVOdW1iZXIiOiIwODUyMjg5MDQyMDgiLCJlbWFpbCI6ImtoYWZpZHVsbXVhbGlmQGdtYWlsLmNvbSIsImltYWdlVXJsIjpudWxsLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTA1VDA0OjA0OjE4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTA1VDA0OjA0OjE4LjAwMFoifSwiaWF0IjoxNzA3MTE1ODMzfQ.1GxqjyvmQNGeVuzWydH2PWB46wm7jVS53re6KOv3T8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mac and Cheese",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Phincon/Downloads/images/food1.jpg",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Boiled macarony with parmesan cheese",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url3000}}/api/menu/2",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] Single Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/menu/2",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "[POST] Add-Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/category/",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] All-Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/category",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] Menu by CategoryID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/category/menu/1",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GET] Menu by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url3000}}/api/category/menu",
+							"host": [
+								"{{url3000}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purcases",
+			"item": []
+		}
+	]
+}
