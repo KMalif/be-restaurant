@@ -4,7 +4,7 @@ var zlib = require("zlib");
 const generateToken = (data) => {
   return jwt.sign(
     {
-      exp: Math.floor(Date.now() / 1000) + 60 * 60,
+      expiresIn: '24h',
       data: data,
     },
     process.env.JWT_SECRET
